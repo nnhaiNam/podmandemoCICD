@@ -37,5 +37,5 @@ jobs:
             docker stop weapp || true
             docker rm weapp || true
             docker pull ${{ secrets.DOCKER_USERNAME }}/webapp:${{ github.sha }}
-            docker run -d --name webapp -p 80:80 ${{ secrets.DOCKER_USERNAME }}/webapp:${{ github.sha }}
+            docker run -dp 80:80 ${{ secrets.DOCKER_USERNAME }}/webapp:${{ github.sha }}
         
